@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+		<!-- Bootstrap CSS -->
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+			crossorigin="anonymous"
+        />
+        
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+
+		<!-- Stylesheet -->
+		<link rel="stylesheet" href="css/style.css" />
+
+		<title>Good Behavior Game</title>
+	</head>
+	<body>
+		<div id="sec_landing" class="container-fluid">
+			<div class="row justify-content-center align-items-center">
+				<div class="col col-sm-8 col-md-6 col-xl-3">
+					<div class="card">
+						<div class="card-header text-center">
+							Good Behavior Game
+						</div>
+						<div class="card-body text-justify">
+							<h4 class="d-none d-md-block">Built for Teachers</h4>
+							<p class="d-none d-md-block">
+								The Good Behavior Game is meant as a playful way to reinforce good behaviors in the classroom.
+							</p>
+							<form>
+								<div class="form-group">
+									<label for="input_username">Teacher</label>
+									<input type="text" class="form-control" id="input_username" placeholder="Lauren Perez" />
+								</div>
+								<div class="form-group">
+									<label for="input_class">Class</label>
+									<input type="text" class="form-control" id="input_class" placeholder="Math101" />
+								</div>
+							</form>
+							<button id="btn_start" type="button" class="btn btn-secondary w-100 mt-0 mb-3">Start a New Game</button>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+        <nav id="sec_navbar" class="d-none justify-content-end align-items-center p-2">
+            <a id="btn_menu" href="#" role="button" class="btn btn-lg btn-outline-secondary"><i class="fas fa-bars"></i><span class="ml-2 mr-2 d-none d-md-inline">Menu</span></a>
+        </nav>
+        </nav>
+		<div id="sec_dashboard" class="container-fluid d-none">
+            <div class="row justify-content-center align-items-center">
+                <div id="cont_menu" class="col-12 col-md-10 col-lg-4">
+                   <!-- Class Card -->
+					<div id="card_class" class="card m-2">
+						<div class="card-header">
+							Student Groups
+						</div>
+						<div class="card-body p-2">
+							<form class="form-row">
+								<div class="form-group col-12">
+									<div class="btn-group w-100">
+										<label for="input_groups" class="mt-2 mr-2">Groups: </label>
+										<select id="input_groups" class="form-control">
+											<option id="3_groups" selected>3 Groups (more than 20 students)</option>
+											<option id="2_groups">2 Groups (less than 20 students)</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group col-12">
+									<label for="input_group1" class="sr-only">Label Group 1</label>
+									<input type="text" class="form-control mb-2" placeholder="Tiger" id="input_group1" value="Tiger" />
+									<label for="input_group2" class="sr-only">Label Group 2</label>
+									<input type="text" class="form-control mb-2" placeholder="Hippo" id="input_group2" value="Hippo" />
+									<label for="input_group3" class="sr-only">Label Group 3</label>
+									<input type="text" class="form-control" placeholder="Monkey" id="input_group3" value="Monkey" />
+								</div>
+							</form>
+						</div>
+                    </div>
+                    <!-- Behaviors Card -->
+					<div id="card_behavior" class="card m-2">
+						<div class="card-header">
+							Behaviors
+						</div>
+						<div class="card-body p-2">
+							<form class="form-row">
+								<div class="form-group col-9">
+									<label for="input_behavior" class="sr-only">Behavior</label>
+									<input type="text" class="form-control" placeholder="Describe the behavior(s)" id="input_behavior" />
+								</div>
+								<div class="form-group col-3">
+									<a id="btn_add_behavior" href="#" class="btn btn-secondary w-100"><i class="fas fa-plus"></i><span class="d-none d-xl-inline ml-2">Add</span></a>
+								</div>
+							</form>
+							
+						</div>
+                    </div>
+                    <!-- Agent Card -->
+                    
+                            <iframe class="m-2 d-block rounded"
+                                allow="microphone;"
+                                width="97%"
+                                height="400px"
+                                src="https://console.dialogflow.com/api-client/demo/embedded/f67c5f6d-8970-4468-a21f-6572a00dd79d">
+                            </iframe>
+                       
+                </div>
+                <div id="cont_game" class="col-12 col-md-10 col-lg-5">
+                    <div class="card m-2">
+						<div class="card-header">
+							Good Behavior Game
+						</div>
+                        <div class="card-body">
+							<div id="chart"></div>
+							<br>
+							<hr>
+							<br>
+                            <div class="d-flex justify-content-center">
+                                <button id="btn_group1" type="button" class="btn btn-lg btn-outline-secondary m-2 w-100">Tiger</button>
+                                <button id="btn_group2" type="button" class="btn btn-lg btn-outline-secondary m-2 w-100">Hippo</button>
+                                <button id="btn_group3" type="button" class="btn btn-lg btn-outline-secondary m-2 w-100">Monkey</button>
+							</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="cont_behav" class="col-12 col-md-10 col-lg-3">
+                    <!-- Behaviors -->
+					<div class="card m-2">
+						<div class="card-header">
+							List of Behaviors
+						</div>
+						<div class="card-body">
+							<ul id="cont_behaviors" class="list-group">
+								
+							</ul>
+						</div>
+					</div>
+				
+                </div>
+            </div>
+        </div>
+
+		<!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+        ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.16.1/apexcharts.min.js"></script>
+        <script src="js/app.js"></script>
+	</body>
+</html>

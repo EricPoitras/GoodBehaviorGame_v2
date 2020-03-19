@@ -1,0 +1,40 @@
+#sec_landing {
+	height: 100vh;
+	background-image: url("../assets/background.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: -400px;
+	background-color: darkslategray;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#sec_landing .row {
+	height: 100%;
+}
+
+#sec_navbar {
+	height: 75px;
+}
+
+#sec_navbar {
+	background-color: white;
+}
+
+#sec_dashboard {
+	min-height: calc(100vh - 75px);
+	background-color: lightgray;
+}
+
+.fa-trash {
+	color: #6c757d;
+}
+
+#sec_dashboard .row {
+	height: 100%;
+}
+
+@media (min-width: 1200px) and (min-height: 900px) {
+	#sec_dashboard {
+		height: calc(100vh - 75px);
+	}
+}
